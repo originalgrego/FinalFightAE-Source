@@ -1,0 +1,1 @@
+java -jar RomMangler.jar split final_fight_gfx_out_split.cfg ffight_gfx.bin

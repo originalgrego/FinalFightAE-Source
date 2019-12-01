@@ -1,0 +1,29 @@
+$0062e0 or $006308 depending on region switch... - In game level data pointer table 
+
+$006330 - Intro level data pointer table
+
+Each table contains entries to determine the offset of the script data for each sub level.
+
+For example, slums table looks as so for the intro level script data:
+
+$06EC14 - $0006, $00A2, $0114
+
+Meaning sub level 0 is $6 bytes out (just after the indexes), sub level 1 $A2 bytes and sub level 2 $114 bytes out.
+
+Each level script entry is $e bytes long, here is an example from the intro of the slums:
+
+0011 2233 4455 66 77 88 99 AA BB CC DD
+AAAA XXXX YYYY    TT SS             BB
+0000 0518 00B8 08 01 03 00 00 00 00 00
+
+Where each labeled field is as follows:
+
+A (w) - Active, a negative value here means the end of a level script
+X (w) - X position
+Y (w) - Y position
+T (b) - Type
+S (b) - Sub Type
+B (b) - Both players must be active
+
+
+
