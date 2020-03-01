@@ -1,0 +1,47 @@
+; JED2EQN -- JEDEC file to Boolean Equations disassembler (Version V063)
+; Copyright (c) National Semiconductor Corporation 1990-1993
+; Disassembled from S224B.jed. Date: 4-4-119
+;$GALMODE SMALL
+
+chip S224B GAL16V8
+
+i1=1 i2=2 i3=3 i4=4 i5=5 i6=6 i7=7 i8=8 i9=9 GND=10 /i11=11 o12=12 
+o13=13 o14=14 o15=15 o16=16 o17=17 o18=18 o19=19 VCC=20 
+
+@ues 0000000000000000
+@ptd unused
+
+equations
+
+       ; Sprites: 0000 - 3fff
+/o17 = /i1 * /i2 * /i3 * /i4 * /i5 * /i6 * /i7 * i11 
+      + i1 * /i2 * /i3 * /i4 * /i5 * /i6 * /i7 * /i11
+
+	   ; Scroll 1/Sprites: 4000 - 4fff
+	 + /i1 * /i2 * /i3 * /i5 * /i6 * i7 * /i8 * /i9 * i11 
+	  + i1 * /i2 * /i3 * /i5 * /i6 * i7 * /i8 * /i9 * /i11
+
+	   ; Scroll 2: 6000 - 7fff
+	 + /i1 * /i2 * i3 * /i4 * /i5 * /i6 * i7 * i8 * i11
+	  + i1 * /i2 * i3 * /i4 * /i5 * /i6 * i7 * i8 * /i11
+
+	  ; Scroll 3: 4000 - 5fff
+	 + /i1 * /i2 * i3 * i4 * /i5 * /i6 * i7 * /i8 * i11
+	  + i1 * /i2 * i3 * i4 * /i5 * /i6 * i7 * /i8 * /i11
+	  
+       ; Sprites: 0000 - 3fff
+/o16 = /i1 * /i2 * /i3 * /i4 * /i5 * /i6 * /i7 * i11 
+      + i1 * /i2 * /i3 * /i4 * /i5 * /i6 * /i7 * /i11
+
+	   ; Scroll 1/Sprites: 4000 - 4fff
+	 + /i1 * /i2 * /i3 * /i5 * /i6 * i7 * /i8 * /i9 * i11 
+	  + i1 * /i2 * /i3 * /i5 * /i6 * i7 * /i8 * /i9 * /i11
+
+	   ; Scroll 2: 6000 - 7fff
+	 + /i1 * /i2 * i3 * /i4 * /i5 * /i6 * i7 * i8 * i11
+	  + i1 * /i2 * i3 * /i4 * /i5 * /i6 * i7 * i8 * /i11
+
+	  ; Scroll 3: 4000 - 5fff
+	 + /i1 * /i2 * i3 * i4 * /i5 * /i6 * i7 * /i8 * i11
+	  + i1 * /i2 * i3 * i4 * /i5 * /i6 * i7 * /i8 * /i11
+		  

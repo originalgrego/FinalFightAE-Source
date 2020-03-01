@@ -1,0 +1,30 @@
+SF2CE board 1a gal pins:
+
+Inputs:
+
+i1,i11 - Something about high/low byte encoding, when they are the same perform the read
+
+i2,i3,i4 - Tile type
+
+i5,i6,i7,i8,i9 - Five bits of tile code, top 3 bits of tile code are ignored, lowest 12 bits as well
+
+Input Layout:
+
+234    5 6789
+ttt cccc cccc cccc cccc cccc
+
+This allows you to encode addresses at the 12 bit boundary
+
+Outputs:
+	
+o19 - Bank 0, ROMs 1, 3
+o18 - Bank 0, ROMs 2, 4
+
+o17 - Bank 1, ROMs 5, 7
+o16 - Bank 1, ROMs 6, 8
+
+o15 - Bank 2, ROMs 10, 12
+o14 - Bank 2, ROMs 11, 13
+
+o13 - Bank 3, ROMs 14, 16
+o12 - Bank 3, ROMs 15, 17
